@@ -35,13 +35,3 @@ target 'RN060' do
 
   use_native_modules!
 end
-
-target 'RN060-tvOS' do
-  # Pods for RN060-tvOS
-
-  target 'RN060-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
