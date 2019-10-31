@@ -1,5 +1,7 @@
 import HomeScreen from '../HomeScreen';
-import {createAppContainer, createStackNavigator} from 'react-navigation';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+
 import DetailsScreen from '../DetailsScreen';
 
 const AppNavigator = createStackNavigator({
