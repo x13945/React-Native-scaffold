@@ -1,7 +1,8 @@
 import HomeScreen from '../HomeScreen';
 import {connect} from 'react-redux';
 
-import {createStackNavigator} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+
 import DetailsScreen from '../DetailsScreen';
 import {createReduxContainer} from 'react-navigation-redux-helpers';
 
