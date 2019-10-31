@@ -17,6 +17,9 @@ import {
   Button,
 } from 'react-native';
 
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
 import {
   Header,
   LearnMoreLinks,
@@ -54,7 +57,7 @@ class HomeScreen extends Component {
                   title="navigate"
                   style={styles.highlight}
                   onPress={() => {
-                    this.props.navigation.navigate('Detail');
+                    this.props.showDetail();
                   }}
                 />
               </View>
@@ -123,5 +126,16 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
+const mapStateToProps = state => {
+  return {};
+};
 
-export default HomeScreen;
+const mapDispatchToProps = dispatch => {
+  return {
+    showDetail: () => dispatch({type: 'Detail'}),
+  };
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(HomeScreen);

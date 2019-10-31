@@ -1,8 +1,11 @@
 import HomeScreen from '../HomeScreen';
-import {createAppContainer, createStackNavigator} from 'react-navigation';
-import DetailsScreen from '../DetailsScreen';
+import {connect} from 'react-redux';
 
-const AppNavigator = createStackNavigator({
+import {createStackNavigator} from 'react-navigation';
+import DetailsScreen from '../DetailsScreen';
+import {createReduxContainer} from 'react-navigation-redux-helpers';
+
+export const AppNavigator = createStackNavigator({
   Home: {
     screen: HomeScreen,
   },
@@ -11,4 +14,11 @@ const AppNavigator = createStackNavigator({
   },
 });
 
-export default createAppContainer(AppNavigator);
+const App = createReduxContainer(AppNavigator);
+const mapStateToProps = state => ({
+  state: state.nav,
+});
+
+const AppWithNavigationState = connect(mapStateToProps)(App);
+
+export default AppWithNavigationState;
